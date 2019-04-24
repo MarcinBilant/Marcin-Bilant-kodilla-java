@@ -3,18 +3,19 @@ package com.kodilla.testing.shape;
 public class Circle implements Shape {
 
     protected String shapeNameCircle;
-    protected String shapeFieldCircle;
+    protected double radius;
 
-    public Circle(String shapeNameCircle, String shapeFieldCircle) {
+    public Circle(String shapeNameCircle, double radius) {
         this.shapeNameCircle = shapeNameCircle;
-        this.shapeFieldCircle = shapeFieldCircle;
+        this.radius = radius;
     }
 
     public String getShapeName() {
         return "Shape name is circle";
     }
 
-    public String getField() {
-        return "Circle field is 25 cm2 ";
+    public double getField() {
+        double shapeFieldCircle = 3.14 * radius;
+        return shapeFieldCircle;
     }
 }

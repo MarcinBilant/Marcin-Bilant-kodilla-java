@@ -3,18 +3,21 @@ package com.kodilla.testing.shape;
 public class Triangle implements Shape {
 
     protected String shapeNameTriangle;
-    protected String shapeFieldTriangle;
+    protected double lenghtTriangle;
+    protected double heightTriangle;
 
-    public Triangle(String shapeNameTriangle, String shapeFieldTriangle) {
+    public Triangle(String shapeNameTriangle, double lenghtTriangle, double heightTriangle) {
         this.shapeNameTriangle = shapeNameTriangle;
-        this.shapeFieldTriangle = shapeFieldTriangle;
+        this.lenghtTriangle = lenghtTriangle;
+        this.heightTriangle = heightTriangle;
     }
 
     public String getShapeName() {
         return "Shape name is triangle";
     }
 
-    public String getField() {
-        return "Triangle field is 20 cm2";
+    public double getField() {
+        double shapeFieldTriangle = 0.5*lenghtTriangle*heightTriangle;
+        return shapeFieldTriangle;
     }
 }

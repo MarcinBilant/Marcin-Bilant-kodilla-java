@@ -9,7 +9,7 @@ public class ShapeCollector {
     protected int n;
     protected Shape figureGet;
     protected String shapeName;
-    protected String shapeField;
+    protected double shapeField;
 
 
     public void addFigure(Shape shape) {

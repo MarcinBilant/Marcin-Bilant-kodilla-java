@@ -26,9 +26,9 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigure(){
         //Given
-        Shape square = new Square("Shape name is square","Square field is 16 cm2 ");
-        Shape triangle = new Triangle("Shape name is triangle", "Triangle field is 20 cm2 ");
-        Shape circle = new Circle("Shape name is circle","Circle field is 25 cm2 ");
+        Shape square = new Square("Shape name is square",3);
+        Shape triangle = new Triangle("Shape name is triangle", 2, 4);
+        Shape circle = new Circle("Shape name is circle",2.50);
 
         ShapeCollector shapeCollector = new ShapeCollector();
 
@@ -51,9 +51,9 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigure() {
         //Given
-        Shape square = new Square("Shape name is square","Square field is 16 cm2 ");
-        Shape triangle = new Triangle("Shape name is triangle", "Triangle field is 20 cm2 ");
-        Shape circle = new Circle("Shape name is circle","Circle field is 25 cm2 ");
+        Shape square = new Square("Shape name is square",3);
+        Shape triangle = new Triangle("Shape name is triangle", 2,4);
+        Shape circle = new Circle("Shape name is circle",2.50);
 
         ShapeCollector shapeCollector = new ShapeCollector();
 
@@ -67,18 +67,18 @@ public class ShapeCollectorTestSuite {
         shapeCollector.removeFigure(circle);
 
         //Then
-        Assert.assertEquals(null, shapeCollector.getFigure(0));
-        Assert.assertEquals(null, shapeCollector.getFigure(1));
-        Assert.assertEquals(null, shapeCollector.getFigure(2));
+        Assert.assertEquals(0, shapeCollector.getFigure(0));
+        Assert.assertEquals(0, shapeCollector.getFigure(1));
+        Assert.assertEquals(0, shapeCollector.getFigure(2));
 
     }
 
     @Test
     public void testGetFigure() {
         //Given
-        Shape square = new Square("Shape name is square","Square field is 16 cm2 ");
-        Shape triangle = new Triangle("Shape name is triangle", "Triangle field is 20 cm2 ");
-        Shape circle = new Circle("Shape name is circle","Circle field is 25 cm2 ");
+        Shape square = new Square("Shape name is square",3);
+        Shape triangle = new Triangle("Shape name is triangle", 2,4);
+        Shape circle = new Circle("Shape name is circle",2.50);
 
         ShapeCollector shapeCollector = new ShapeCollector();
 
