@@ -62,17 +62,13 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(circle);
 
         //When
-        shapeCollector.removeFigure(square);
         shapeCollector.removeFigure(triangle);
-        shapeCollector.removeFigure(circle);
 
         //Then
-        Assert.assertEquals(0, shapeCollector.getFigure(0));
-        Assert.assertEquals(0, shapeCollector.getFigure(1));
-        Assert.assertEquals(0, shapeCollector.getFigure(2));
+        Assert.assertEquals(square, shapeCollector.getFigure(0));
+        Assert.assertEquals(circle, shapeCollector.getFigure(1));
 
     }
-
     @Test
     public void testGetFigure() {
         //Given
@@ -97,6 +93,22 @@ public class ShapeCollectorTestSuite {
         Assert.assertEquals(circle, result3);
 
     }
+    @Test
+    public void testShowFigures() {
+        //Given
+        Shape square = new Square("Shape name is square",3);
+        Shape triangle = new Triangle("Shape name is triangle", 2,4);
+        Shape circle = new Circle("Shape name is circle",2.50);
 
+        ShapeCollector shapeCollector = new ShapeCollector();
 
+        shapeCollector.addFigure(square);
+        shapeCollector.addFigure(triangle);
+        shapeCollector.addFigure(circle);
+        //When
+
+        shapeCollector.showFigures();
+
+        //Then
+    }
 }
