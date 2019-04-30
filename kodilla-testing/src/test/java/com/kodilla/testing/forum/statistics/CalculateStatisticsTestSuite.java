@@ -31,17 +31,13 @@ public class CalculateStatisticsTestSuite {
     public void testCalculateStatisticWhithMock1 (){
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<String>() {
-            @Override
-            public int size() {
-                return 0;
-            }
-        };
+        List<String> usersNames = new ArrayList<String>();
+
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn(10);
         when(statisticsMock.commentsCount()).thenReturn(100);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+        CalculateStatistics calculateStatistics = new CalculateStatistics();
 
         //When
         calculateStatistics.calculateAdvStatistics(statisticsMock);
@@ -56,17 +52,16 @@ public class CalculateStatisticsTestSuite {
     public void testCalculateStatisticWhithMock2 (){
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<String>() {
-            @Override
-            public int size() {
-                return 100;
-            }
-        };
+        List<String> usersNames = new ArrayList<String>();
+        for(int i=0; i<100; i++ ) {
+            usersNames.add("Janek"+ i);
+        }
+
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn(1000);
         when(statisticsMock.commentsCount()).thenReturn(0);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+        CalculateStatistics calculateStatistics = new CalculateStatistics();
 
         //When
         calculateStatistics.calculateAdvStatistics(statisticsMock);
@@ -81,17 +76,16 @@ public class CalculateStatisticsTestSuite {
     public void testCalculateStatisticWhithMock3 (){
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<String>() {
-            @Override
-            public int size() {
-                return 100;
+        List<String> usersNames = new ArrayList<String>();
+            for(int i=0; i<100; i++ ) {
+                usersNames.add("Janek"+ i);
             }
-        };
+
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn(500);
         when(statisticsMock.commentsCount()).thenReturn(700);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+        CalculateStatistics calculateStatistics = new CalculateStatistics();
 
         //When
         calculateStatistics.calculateAdvStatistics(statisticsMock);

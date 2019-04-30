@@ -8,12 +8,6 @@ public class CalculateStatistics {
     protected double avgPostsPerUser;
     protected double avgCommentsPerUser;
     protected double avgCommentsPerPost;
-    protected Statistics statistics;
-
-    public CalculateStatistics(Statistics statistics) {
-        this.statistics = statistics;
-    }
-
 
     public void calculateAdvStatistics(Statistics statistics) {
 
