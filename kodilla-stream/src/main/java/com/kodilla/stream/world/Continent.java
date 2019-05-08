@@ -1,5 +1,7 @@
 package com.kodilla.stream.world;
 
+import com.kodilla.stream.forum.ForumUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,4 +21,6 @@ public final class Continent {
     public List<Country> getCountries() {
         return countries;
     }
+
+
 }
