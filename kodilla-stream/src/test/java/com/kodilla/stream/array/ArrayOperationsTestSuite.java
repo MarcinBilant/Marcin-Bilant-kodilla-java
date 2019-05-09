@@ -1,6 +1,8 @@
 package com.kodilla.stream.array;
+import org.junit.Assert;
 import org.junit.Test;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class ArrayOperationsTestSuite {
@@ -16,6 +18,9 @@ public class ArrayOperationsTestSuite {
 
         //Then
         int size = numbers.length;
+
+        double exeptecedavergae = 11.5;
+        Assert.assertEquals(exeptecedavergae,ArrayOperations.getAverage(numbers),0.001);
 
 
     }
