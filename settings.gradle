@@ -9,4 +9,6 @@ include 'kodilla-stream'
 include 'kodilla-rps'
 include 'kodilla-exception'
 include 'com.kodilla.exception'
+include 'project-checkers'
+include 'kodilla-good-patterns'
 
