@@ -7,10 +7,12 @@ public class ShowTitle2 {
         public static void main(String[] args) {
 
             MovieStore movieStore  = new MovieStore();
-            movieStore.getMovies().entrySet().stream()
-                    .map(entry->entry.getValue())
-                   .forEach(s-> System.out.print(String.join("!",s)));
 
+            String showTitle = movieStore.getMovies().entrySet().stream()
+                    .flatMap(entry -> entry.getValue().stream())
+                    .collect(Collectors.joining(" ! "));
+
+            System.out.println(showTitle);
         }
 
 }
