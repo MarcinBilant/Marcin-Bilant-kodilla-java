@@ -7,6 +7,7 @@ public class ForumUser {
     String userName = "John Smith";
 
     public String getUserName() {
+        System.out.println(userName);
         return userName;
     }
 }
