@@ -1,5 +1,6 @@
 package com.kodilla.patterns.singleton.factory.task;
 
+import com.kodilla.patterns.factory.task.ShoppingTask;
 import com.kodilla.patterns.factory.task.Task;
 import com.kodilla.patterns.factory.task.TaskFactory;
 import org.junit.Assert;
@@ -11,7 +12,7 @@ public class TaskFactoryTestSuite {
         //Given
         TaskFactory factory = new TaskFactory();
         //When
-        Task shopping = factory.makeTask(TaskFactory.SHOPPING);
+        ShoppingTask shopping = (ShoppingTask)factory.makeTask(TaskFactory.SHOPPING);
         shopping.executeTask();
         //Then
         Assert.assertEquals("Shopping",shopping.getTaskName());
