@@ -5,12 +5,14 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "ITEMS")
 public class Item {
-    int id;
-    Product product;
-    BigDecimal price;
-    int quantity;
-    BigDecimal value;
+    private int id;
+    private Product product;
+    private BigDecimal price;
+    private int quantity;
+    private BigDecimal value;
     private Invoice invoice;
 
     public Item () {
@@ -36,10 +38,12 @@ public class Item {
     public Product getProduct() {
         return product;
     }
+    @NotNull
     @Column(name = "PRICE")
     public BigDecimal getPrice() {
         return price;
     }
+    @NotNull
     @Column(name = "QUANTITY")
     public int getQuantity() {
         return quantity;

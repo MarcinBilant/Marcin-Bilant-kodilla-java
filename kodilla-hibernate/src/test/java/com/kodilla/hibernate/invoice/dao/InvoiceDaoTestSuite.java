@@ -12,6 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
+import java.sql.Array;
+import java.util.Arrays;
 
 //@RunWith(SpringRunner.class)
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -36,13 +38,14 @@ public class InvoiceDaoTestSuite {
         Item item1 = new Item(product1, priceProduct1, 1);
         Item item2 = new Item(product2, priceProduct2, 2);
 
-        Invoice invoice1 = new Invoice("01_2019");
+        Invoice invoice1 = new Invoice("2019");
+        //invoice1.setItems(Arrays.asList(item1,item2));
         invoice1.getItems().add(item1);
         invoice1.getItems().add(item2);
 
         //when
-        invoiceDao.save(invoice1);
-        int invoice1Id = invoice1.getId();
+       invoiceDao.save(invoice1);
+       int invoice1Id = invoice1.getId();
 
         //then
         Assert.assertEquals(2, productDao.count());
@@ -50,12 +53,12 @@ public class InvoiceDaoTestSuite {
         Assert.assertEquals(1, invoiceDao.count());
 
         //cleanup
-        try {
+      /*  try {
             productDao.deleteAll();
             itemDao.deleteAll();
             invoiceDao.deleteAll();
         } catch (Exception e) {
             //do nothing
-        }
+        }*/
     }
 }

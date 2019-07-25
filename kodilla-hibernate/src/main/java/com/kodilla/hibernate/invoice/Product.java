@@ -8,8 +8,8 @@ import java.util.List;
 @Entity
 @Table(name = "PRODUCTS")
 public class Product {
-    int id;
-    String name;
+    private int id;
+    private String name;
     private List<Item> items = new ArrayList<>();
 
     public Product() {

@@ -4,14 +4,15 @@ import javax.persistence.*;
 
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "INVOICES")
 public class Invoice {
-    int id;
-    String number;
-    List<Item> items ;
+    private int id;
+    private String number;
+    private List<Item> items = new ArrayList<>();
 
     public Invoice() {
     }
@@ -34,11 +35,11 @@ public class Invoice {
         return number;
     }
 
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    private void setNumber(String number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
