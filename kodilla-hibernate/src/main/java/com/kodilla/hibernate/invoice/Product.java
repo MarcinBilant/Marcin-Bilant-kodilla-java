@@ -21,17 +21,18 @@ public class Product {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "ID", unique = true)
+    @Column(name = "ID")
     public int getId() {
         return id;
     }
 
+    @NotNull
     @Column(name = "NAME")
     public String getName() {
         return name;
     }
 
-    private void setId (int id) {
+    public void setId (int id) {
         this.id = id;
     }
 

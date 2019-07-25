@@ -15,8 +15,8 @@ import java.math.BigDecimal;
 import java.sql.Array;
 import java.util.Arrays;
 
-//@RunWith(SpringRunner.class)
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class InvoiceDaoTestSuite {
     @Autowired
@@ -53,12 +53,12 @@ public class InvoiceDaoTestSuite {
         Assert.assertEquals(1, invoiceDao.count());
 
         //cleanup
-      /*  try {
+       try {
             productDao.deleteAll();
             itemDao.deleteAll();
             invoiceDao.deleteAll();
         } catch (Exception e) {
             //do nothing
-        }*/
+        }
     }
 }
