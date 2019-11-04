@@ -11,6 +11,10 @@ import java.util.List;
                 " WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :LETTERS",
         resultClass = Company.class
 )
+@NamedQuery(
+        name = "Company.findByText",
+        query = "FROM COMPANIES WHERE name LIKE :ARG"
+)
 
 
 @Entity

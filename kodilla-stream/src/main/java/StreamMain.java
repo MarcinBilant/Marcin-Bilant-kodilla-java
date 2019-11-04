@@ -1,3 +1,4 @@
+import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
@@ -27,6 +28,13 @@ public class StreamMain {
 
 
         System.out.println(LocalDate.now());
+
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        poemBeautifier.beautify("This is first test to beautify", (text)->"ABC "+text+" ABC");
+        poemBeautifier.beautify("This is second test to beautify", (text)-> text.toUpperCase());
+        poemBeautifier.beautify("This is third test to beautify", (text)-> text.substring(8));
+        poemBeautifier.beautify("This is fourth test to beautify", (text)-> text.substring(8,15));
+
 
     }
 }

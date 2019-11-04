@@ -10,6 +10,11 @@ import java.util.List;
         query = "FROM Employee WHERE lastname = : LASTNAME"
 )
 
+@NamedQuery(
+        name = "Employee.findByText",
+        query = "FROM Emplyee WHERE lastname LIKE : ARG"
+)
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
