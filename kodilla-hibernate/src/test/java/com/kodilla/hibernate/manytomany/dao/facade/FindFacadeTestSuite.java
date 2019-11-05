@@ -2,6 +2,7 @@ package com.kodilla.hibernate.manytomany.dao.facade;
 
 
 import com.kodilla.hibernate.manytomany.Company;
+import com.kodilla.hibernate.manytomany.Employee;
 import com.kodilla.hibernate.manytomany.dao.CompanyDao;
 import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import com.kodilla.hibernate.manytomany.facade.FindFacade;
@@ -49,5 +50,31 @@ public class FindFacadeTestSuite {
             //do nothing
         }
     }
+    @Test
+    public void testFindEmployees() {
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaClarckson = new Employee("Linda", "Clarckson");
+
+        //when
+        employeeDao.save(johnSmith);
+        employeeDao.save(stephanieClarckson);
+        employeeDao.save(lindaClarckson);
+        List<Employee> employees = findFacade.findEmployess("la");
+
+        //then
+        Assert.assertEquals(2, employees.size());
+
+        //cleanup
+        try {
+            employeeDao.delete(johnSmith);
+            employeeDao.delete(stephanieClarckson);
+            employeeDao.delete(lindaClarckson);
+        } catch (Exception e) {
+            //do nothing
+        }
+    }
+
 
 }
